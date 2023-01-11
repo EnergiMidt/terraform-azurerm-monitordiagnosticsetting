@@ -7,7 +7,7 @@ locals {
 }
 
 resource "azurerm_monitor_diagnostic_setting" "monitor_diagnostic_setting" {
-  name                           = local.combined_system_name
+  name                           = "${local.combined_system_name}-monitor-diagnostic-setting"
   target_resource_id             = var.monitor_diagnostic_target_resource_id
   log_analytics_workspace_id     = local.log_analytics_workspace_resource_id
   log_analytics_destination_type = "Dedicated"
