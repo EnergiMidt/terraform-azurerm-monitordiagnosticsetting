@@ -15,7 +15,7 @@ resource "azurerm_monitor_diagnostic_setting" "monitor_diagnostic_setting" {
   dynamic "log" {
     for_each = var.monitor_diagnostic_categories_log_category_groups
     content {
-      category_group = log.key
+      category_group = log.value
       enabled        = true
 
       retention_policy {
