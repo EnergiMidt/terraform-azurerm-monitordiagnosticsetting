@@ -1,6 +1,6 @@
-# terraform-azurerm-centrallog
+# [terraform-azurerm-monitordiagnosticsetting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting)
 
-Connects external Application Insights component to a central Log Analytics Workspace.
+Manages a Diagnostic Setting for an existing Resource.
 
 ## Getting Started
 
