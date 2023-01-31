@@ -12,11 +12,10 @@ resource "azurerm_monitor_diagnostic_setting" "monitor_diagnostic_setting" {
   log_analytics_workspace_id     = local.log_analytics_workspace_resource_id
   log_analytics_destination_type = "Dedicated"
 
-  dynamic "log" {
+  dynamic "enabled_log" {
     for_each = var.monitor_diagnostic_categories_log_category_groups
     content {
-      category_group = log.value
-      enabled        = true
+      category_group = enabled_log.value
 
       retention_policy {
         enabled = true
