@@ -6,14 +6,14 @@ locals {
   log_analytics_workspace_resource_id = "/subscriptions/${var.subscription_id}/resourceGroups/${local.combined_system_name}-${var.environment}-rg/providers/Microsoft.OperationalInsights/workspaces/${local.combined_system_name}-${var.environment}-log"
 }
 
-resource "azurerm_monitor_diagnostic_setting" "monitor_diagnostic_setting" {
-  name                           = "${local.combined_system_name}-monitor-diagnostic-setting"
-  target_resource_id             = var.monitor_diagnostic_target_resource_id
+resource "azurerm_monitor_diagnostic_setting" "diagnostic_setting" {
+  name                           = "${local.combined_system_name}-diagnostic-setting"
+  target_resource_id             = var.diagnostic_target_resource_id
   log_analytics_workspace_id     = local.log_analytics_workspace_resource_id
   log_analytics_destination_type = "Dedicated"
 
   dynamic "enabled_log" {
-    for_each = var.monitor_diagnostic_categories_log_category_groups
+    for_each = var.diagnostic_categories_log_category_groups
     content {
       category_group = enabled_log.value
 
@@ -25,7 +25,7 @@ resource "azurerm_monitor_diagnostic_setting" "monitor_diagnostic_setting" {
   }
 
   dynamic "metric" {
-    for_each = var.monitor_diagnostic_categories_metrics
+    for_each = var.diagnostic_categories_metrics
 
     content {
       category = metric.value

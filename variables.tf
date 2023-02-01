@@ -37,7 +37,7 @@ variable "environment" {
   }
 }
 
-variable "monitor_diagnostic_target_resource_id" {
+variable "diagnostic_target_resource_id" {
   description = <<EOT
   (Required) The ID of an existing Resource on which to configure Diagnostic Settings.
   Changing this forces a new resource to be created.
@@ -45,7 +45,7 @@ variable "monitor_diagnostic_target_resource_id" {
   type        = string
 }
 
-variable "monitor_diagnostic_categories_log_category_groups" {
+variable "diagnostic_categories_log_category_groups" {
   description = <<EOT
   (Required) The list of Diagnostic Log Category Groups.
   The Log Categories available vary depending on the Resource being used.
@@ -54,7 +54,7 @@ variable "monitor_diagnostic_categories_log_category_groups" {
   type        = list(string)
 }
 
-variable "monitor_diagnostic_categories_metrics" {
+variable "diagnostic_categories_metrics" {
   description = <<EOT
   (Required) The list of Diagnostic Metrics.
   The Metric Categories available vary depending on the Resource being used.
