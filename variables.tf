@@ -61,6 +61,7 @@ variable "diagnostic_categories_metrics" {
   You may wish to use the `azurerm_monitor_diagnostic_categories` Data Source to identify which categories are available for a given Resource.
   EOT
   type        = list(string)
+  default     = []
 }
 
 variable "tags" {
