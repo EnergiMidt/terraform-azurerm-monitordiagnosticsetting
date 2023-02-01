@@ -1,4 +1,4 @@
-# [terraform-azurerm-monitordiagnosticsetting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting)
+# [terraform-azurerm-diagnosticsetting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting)
 
 Manages a Diagnostic Setting for an existing Resource.
 
