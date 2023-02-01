@@ -56,7 +56,7 @@ variable "diagnostic_categories_log_category_groups" {
 
 variable "diagnostic_categories_metrics" {
   description = <<EOT
-  (Required) The list of Diagnostic Metrics.
+  (Optional) The list of Diagnostic Metrics.
   The Metric Categories available vary depending on the Resource being used.
   You may wish to use the `azurerm_monitor_diagnostic_categories` Data Source to identify which categories are available for a given Resource.
   EOT
