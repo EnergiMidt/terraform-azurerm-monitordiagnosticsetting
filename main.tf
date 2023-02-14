@@ -12,11 +12,14 @@ resource "azurerm_monitor_diagnostic_setting" "diagnostic_setting" {
   log_analytics_workspace_id     = local.log_analytics_workspace_resource_id
   log_analytics_destination_type = "Dedicated"
 
+  # WARNING!!!
+  # Diagnostic setting does not support mix of log category and log category group.
+  # Not all resources have category groups available.
+  # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting
+
   dynamic "enabled_log" {
     for_each = var.log_category_types
     content {
-      # Not all resources have category groups available.
-      # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting
       category = enabled_log.value
 
       retention_policy {
