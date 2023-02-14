@@ -8,7 +8,7 @@ locals {
 
 resource "azurerm_monitor_diagnostic_setting" "diagnostic_setting" {
   name                           = "${local.combined_system_name}-diagnostic-setting"
-  target_resource_id             = var.diagnostic_target_resource_id
+  target_resource_id             = var.target_resource_id
   log_analytics_workspace_id     = local.log_analytics_workspace_resource_id
   log_analytics_destination_type = "Dedicated"
 

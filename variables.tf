@@ -37,7 +37,7 @@ variable "environment" {
   }
 }
 
-variable "diagnostic_target_resource_id" {
+variable "target_resource_id" {
   description = <<EOT
   (Required) The ID of an existing Resource on which to configure Diagnostic Settings.
   Changing this forces a new resource to be created.
