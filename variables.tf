@@ -45,16 +45,16 @@ variable "diagnostic_target_resource_id" {
   type        = string
 }
 
-variable "diagnostic_enabled_log_categories" {
+variable "log_category_types" {
   description = <<EOT
-  (Required) The list of Diagnostic Log Categories.
+  (Required) The list of Diagnostic Log Category Types.
   The Log Categories available vary depending on the Resource being used.
   You may wish to use the `azurerm_monitor_diagnostic_categories` Data Source or list of service specific schemas to identify which categories are available for a given Resource.
   EOT
   type        = list(string)
 }
 
-variable "diagnostic_categories_metrics" {
+variable "metrics" {
   description = <<EOT
   (Optional) The list of Diagnostic Metrics.
   The Metric Categories available vary depending on the Resource being used.
