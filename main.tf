@@ -22,9 +22,12 @@ resource "azurerm_monitor_diagnostic_setting" "diagnostic_setting" {
     content {
       category = enabled_log.value
 
+      # TODO: The `retention_policy` has been deprecated in favor of `azurerm_storage_management_policy` resource.
+      # Learn more information on the deprecation [in the Azure documentation](https://aka.ms/diagnostic_settings_log_retention).
+      # https://github.com/hashicorp/terraform-provider-azurerm/pull/23260
+      # https://github.com/hashicorp/terraform-provider-azurerm/issues/23051
       retention_policy {
         enabled = true
-        days    = 30
       }
     }
   }
@@ -36,9 +39,12 @@ resource "azurerm_monitor_diagnostic_setting" "diagnostic_setting" {
       category = metric.value
       enabled  = true
 
+      # TODO: The `retention_policy` has been deprecated in favor of `azurerm_storage_management_policy` resource.
+      # Learn more information on the deprecation [in the Azure documentation](https://aka.ms/diagnostic_settings_log_retention).
+      # https://github.com/hashicorp/terraform-provider-azurerm/pull/23260
+      # https://github.com/hashicorp/terraform-provider-azurerm/issues/23051
       retention_policy {
         enabled = true
-        days    = 30
       }
     }
   }
